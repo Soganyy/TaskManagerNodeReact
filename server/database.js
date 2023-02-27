@@ -13,16 +13,17 @@ const taskSchema = new Schema({
   status: { type: String, required: true },
   priority: { type: String, required: true },
   dueDate: { type: Date, required: true },
-}, { timestamps: true });
+}, { timestamps: true, versionKey: false });
 
 const userSchema = new Schema({
   name: { type: String, required: true },
-  email: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }]
 }, { timestamps: true });
 
 const Task = mongoose.model('Task', taskSchema);
+
 const User = mongoose.model('User', userSchema);
 
 
