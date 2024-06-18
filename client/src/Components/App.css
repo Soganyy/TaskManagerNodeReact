@@ -1,0 +1,55 @@
+body {
+  background-color: #f2e8e4;
+  margin: 2em;
+}
+
+header img {
+  object-fit: contain;
+  width: 17vw;
+  height: auto;
+}
+
+.main img {
+  width: 80%;
+}
+
+.hr-lines {
+  position: relative;
+  max-width: 500px;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.hr-lines::before,
+.hr-lines::after {
+  content: " ";
+  height: 2px;
+  width: 150px;
+  background: #aaaaaa;
+  display: block;
+  position: absolute;
+  top: 50%;
+}
+
+.hr-lines::before {
+  left: 0;
+}
+
+.hr-lines::after {
+  right: 0;
+}
+
+.fa-google {
+  background: conic-gradient(
+    from -45deg,
+    #ea4335 110deg,
+    #4285f4 90deg 180deg,
+    #34a853 180deg 270deg,
+    #fbbc05 270deg
+  )
+    73% 55% / 150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
