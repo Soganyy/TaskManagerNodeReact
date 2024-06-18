@@ -1,8 +1,9 @@
-const express = require("express");
-const router = express.Router();
 const verifyToken = require("../middleware/authMiddleware");
 const { Task } = require("../model/task");
-const { User } = require("../model/user")
+const { User } = require("../model/user");
+
+const express = require("express");
+const router = express.Router();
 
 router.post("/create", verifyToken, async (req, res) => {
   try {

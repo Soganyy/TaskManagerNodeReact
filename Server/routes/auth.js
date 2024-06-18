@@ -1,8 +1,9 @@
 const jwt = require("jsonwebtoken");
 const SECRET_KEY = process.env.TOKEN_KEY;
-const express = require('express');
-const router = express.Router();
 const { User } = require("../model/user");
+
+const express = require("express");
+const router = express.Router();
 
 router.post("/signup", async (req, res) => {
   try {
@@ -59,8 +60,9 @@ router.post("/login", async (req, res) => {
       );
 
       res.status(200).json({ user, token });
+    } else {
+      res.status(400).send("Invalid Credentials");
     }
-    res.status(400).send("Invalid Credentials");
   } catch (err) {
     console.log(err);
   }
