@@ -21,8 +21,8 @@ router.put("/update", verifyToken, async (req, res) => {
     );
 
     res.status(200).json(changedUser);
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
     res.status(500).send("Internal Server Error");
   }
 });
